@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { getPosts } from "../../../clients/myFaceClients";
 import { PostList } from "../postList/PostList";
 import "./PostListPage.scss";
 
@@ -14,22 +15,11 @@ export function PostListPage() {
 
     useEffect(
         function() {
-            const url = `http://localhost:3001/posts?${
-                pageNumber
-                    ? `page=${pageNumber}`
-                    : ""
-            }&${
-                pageSize
-                    ? `pageSize=${pageSize}`
-                    : ""
-            }`
-
-            fetch(url)
-                .then(response => response.json())
-                .then(postListJson => {
-                    setPostList(postListJson.results);
-                    setNext(postListJson.next);
-                    setPrevious(postListJson.previous);
+            getPosts(pageNumber, pageSize)
+                .then(postsPage => {
+                    setPostList(postsPage.results);
+                    setNext(postsPage.next);
+                    setPrevious(postsPage.previous);
                 });
         },
         [pageNumber, pageSize]
