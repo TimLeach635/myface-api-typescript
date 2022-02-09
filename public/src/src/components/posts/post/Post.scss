@@ -1,0 +1,33 @@
+@import "../../../constants.scss";
+
+.post {
+    background-color: $darkerBackgroundColour;
+    display: grid;
+    grid-template-columns: 40vw 1fr;
+    grid-template-rows: 0.6fr 0.4fr;
+    height: 40vw;
+    margin: 0.5rem;
+
+    img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        width: 40vw;
+        height: 40vw;
+    }
+
+    h2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin: 0;
+        font-size: $mobile-subtitle-font-size;
+        line-height: $mobile-subtitle-line-height;
+        align-self: center;
+    }
+
+    p {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        margin: 0;
+        align-self: center;
+    }
+}
