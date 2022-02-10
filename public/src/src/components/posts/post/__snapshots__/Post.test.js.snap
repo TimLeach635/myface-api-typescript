@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="post"
+>
+  <h2>
+    Post message
+  </h2>
+  <img
+    alt="Post message"
+    src="Image url"
+  />
+  <p>
+    2022/04/05 11:00
+  </p>
+</div>
+`;
